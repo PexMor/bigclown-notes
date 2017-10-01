@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS pootledb;
+CREATE DATABASE pootledb CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+GRANT ALL PRIVILEGES ON pootledb.* TO 'pootle'@'localhost' IDENTIFIED BY 'secret';
+GRANT ALL PRIVILEGES ON pootledb.* TO 'pootle'@'%' IDENTIFIED BY 'secret';
+FLUSH PRIVILEGES;
