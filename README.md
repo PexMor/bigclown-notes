@@ -18,4 +18,6 @@ Some scripts to make fashing easier before I have learned that [Firmware Utility
 
 Simple sketch to show principle of tweaking the [Firmware Utility](https://github.com/bigclownlabs/bch-firmware-utility) in a way that let the Big Clown fly in Clouds.
 
+## Python DFU
 
+Github [mobilinkd/dfuse-tool](https://github.com/mobilinkd/dfuse-tool.git)
