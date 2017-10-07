@@ -1,4 +1,8 @@
-# The tools
+# Python domain
+
+Some utilities that might help to work with the hardware.
+
+## The tools
 
 * **tty.py** - read from serial and display string to stdout 
 * **prepVPython.sh** - prepare the virtual environment 
@@ -7,7 +11,7 @@
 
 > **Note:** The STM32 is shown as "0483:df11: STMicroelectronics = STM32  BOOTLOADER"
 
-# Miscelaneous links
+## Miscelaneous links
 
 * http://winfred-lu.blogspot.cz/2013/07/python-print-string-descriptors-for-usb.html
 * https://www.orangecoat.com/how-to/use-pyusb-to-find-vendor-and-product-ids-for-usb-devices
