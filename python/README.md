@@ -5,7 +5,9 @@
 * **listUsb.sh** - list the USB devices using 
 * **listUsb.py** - the python script for USB
 
-#Â Miscelaneous links
+> **Note:** The STM32 is shown as "0483:df11: STMicroelectronics = STM32  BOOTLOADER"
+
+# Miscelaneous links
 
 * http://winfred-lu.blogspot.cz/2013/07/python-print-string-descriptors-for-usb.html
 * https://www.orangecoat.com/how-to/use-pyusb-to-find-vendor-and-product-ids-for-usb-devices
