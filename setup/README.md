@@ -6,7 +6,7 @@ In March 2017 I have become a proud owner of Big Clown Basic Wireless set. Unfor
 
 [Basic Wireless Set](https://obchod.bigclown.cz/products/basic-wireless-set)
 
-As you can see the set consist of two [core modules](https://shop.bigclown.com/products/core-module), one [base module](https://shop.bigclown.com/products/base-module), one [battery module](https://shop.bigclown.com/products/battery-module) and of course a [humidity tag](https://shop.bigclown.com/products/humidity-tag). And well of course whole lot of good spirit of Big Clown accompanied with necessary red nose to get you out of any troubles.
+As you can see the set consist of two [core modules](https://shop.bigclown.com/products/core-module), one [base module](https://shop.bigclown.com/products/base-module), one [battery module](https://shop.bigclown.com/products/battery-module) and of course a [humidity tag](https://shop.bigclown.com/products/humidity-tag). And whole lot of good spirit of Big Clown accompanied with necessary red nose to get you out of any troubles.
 
 ## Hardware
 
@@ -18,7 +18,7 @@ It's heart is beating at the STM32L series CPU ([more on the web](https://shop.b
 
 ![pinout diagram of the core module](https://doc.bigclown.cz/images/core-module/core-module.png)
 
-First thing I have to learn was how to get into DFU mode (Device Firmare Upgrade) aka flashing the device. It is [described at the web site](https://doc.bigclown.com/core-module-flashing.html) but actually it is goog to memorize :-) And so again to remember:
+First thing I have to learn was how to get into DFU mode (Device Firmare Upgrade) aka flashing the device. It is [described at the web site](https://doc.bigclown.com/core-module-flashing.html) but actually it is good to memorize :-) And so again to remember:
 
 1. press and **hold** the **Boot ~ 'B'** button *- to give the CPU indication the you want to enter DFU/flashing mode*
 2. trigger reset of the CPU by pressing and releasing **Reset ~ 'R'** button
