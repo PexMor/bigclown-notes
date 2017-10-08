@@ -3,13 +3,16 @@
 In March 2017 I have become a proud owner of Big Clown Basic Wireless set. Unfortunately it was resting at the shelf for almost half a year! After that looooong period of time I came back to little gadget at the beginning of autumn. After a busy months at work it was a relieve to play with couple of well made and documented piece of hardware. I was always software engineer biased towards hardware. And I still consider the hardware to be the solid base for any software games.
 
 ![Image of Wireless set](https://cdn.shopify.com/s/files/1/1443/0540/products/Product_WebPhotos_Basic_Wireless_Set_600x382.png)
+
 [Basic Wireless Set](https://obchod.bigclown.cz/products/basic-wireless-set)
 
 As you can see the set consist of two [core modules](https://shop.bigclown.com/products/core-module), one [base module](https://shop.bigclown.com/products/base-module), one [battery module](https://shop.bigclown.com/products/battery-module) and of course a [humidity tag](https://shop.bigclown.com/products/humidity-tag). And well of course whole lot of good spirit of Big Clown accompanied with necessary red nose to get you out of any troubles.
 
 ## Hardware
 
-![Core module](https://cdn.shopify.com/s/files/1/1716/4105/products/Product_WebPhotos_Core_Module_600x382.png) [core module](https://shop.bigclown.com/products/core-module) and it's [schemantics](https://github.com/bigclownlabs/bc-hardware/blob/master/out/bc-module-core/bc-module-core-rev-1-3-sch.pdf)
+![Core module](https://cdn.shopify.com/s/files/1/1716/4105/products/Product_WebPhotos_Core_Module_600x382.png)
+
+[core module](https://shop.bigclown.com/products/core-module) and it's [schemantics](https://github.com/bigclownlabs/bc-hardware/blob/master/out/bc-module-core/bc-module-core-rev-1-3-sch.pdf)
 
 It's heart is beating at the STM32L series CPU ([more on the web](https://shop.bigclown.com/products/core-module)) with emphais on low power consumption. Below is a pinout diagram that helped me a lot when I needed to connect other pieces of hardware or non-BC peripherals.
 
