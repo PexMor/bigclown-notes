@@ -6,7 +6,10 @@ import time
 import datetime
 # sys.setdefaultencoding('utf-8')
 
-ser = serial.Serial('/dev/tty.usbmodemFA131')
+ttyname = '/dev/tty.usbmodemFA131'
+if (len(sys.argv)>1):
+    ttyname = sys.argv[1]
+ser = serial.Serial(ttyname)
 print("serial.name", ser.name)
 try:
     while True:
