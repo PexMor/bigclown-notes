@@ -202,6 +202,140 @@ $ ./tty.py
 
 > **Note:** `\u2103` is degreee of celsius encoded as one character in Unicode (see [fileformat info](http://www.fileformat.info/info/unicode/char/2103/index.htm), [ graphemica](http://graphemica.com/%E2%84%83) or [codepoint](https://codepoints.net/U+2103)).
 
+### Update 2017/10/11
+
+[The new Remote](https://github.com/bigclownlabs/bcf-generic-node)([git](https://github.com/bigclownlabs/bcf-generic-node.git)) has emerged and it's conterpart [the USB gateway](https://github.com/bigclownlabs/bcf-usb-gateway)([git](https://github.com/bigclownlabs/bcf-usb-gateway.git)) it is worth to mention that it has much better code readability. An also the `dfu-util` is now wrapper into nice python utility which has more capabilities:
+
+* installable from python directly `pip install bcf`
+* two firware download modes
+	* USB DFU (original core module)
+	* serial (plain serial with CTS('R')+DTR('B') mode switch
+* flash from local or remote(url) repository
+* download/update from remote repository
+* own or stock firmware (you do not have to build the binary)
+
+```bash
+# get the base and remote (now usb gateway and generic node)
+git clone --recursive https://github.com/bigclownlabs/bcf-usb-gateway.git
+git clone --recursive https://github.com/bigclownlabs/bcf-generic-node.git
+
+# build them
+cd bcf-usb-gateway
+make
+# or make release
+cd ..
+
+cd bcf-generic-node
+make
+# or make release
+cd ..
+
+# check whether 
+find bcf-usb-gateway/out -type f
+find bcf-generic-node/out -type f
+
+# MacOSX
+# note: -p --path <bus-port. ... .port>
+# the above parameter can be used for selecting appropriate device
+dfu-util -s 0x08000000:leave -d 0483:df11 -a 0 -D firmware.bin
+```
+
+When it is run through the tty.py which reads the serial port
+
+```bash
+$ ./tty.py
+/dev/tty.usbmodemFA131
+["836d1982194a/push-button/-/event-count", 0]
+["836d1982194a/push-button/-/event-count", 1]
+["836d1982194a/push-button/-/event-count", 2]
+["836d1982194a/push-button/-/event-count", 3]
+```
+
+The new [bcf](https://github.com/bigclownlabs/bch-firmware-utility.git) is actually a python installer that has almost no documentation at the moment thus you have to dig through the docs a little bit.
+
+```bash
+# big clown firmware (bcf)
+$ pip install bcf
+
+# run it to get short help
+$ bcf
+usage: bcf [-h] [-v] COMMAND ...
+bcf: error: too few arguments
+
+# bcf version should be printed also in help screen
+$ bcf -h
+usage: bcf [-h] [-v] COMMAND ...
+
+BigClown Firmware Flasher
+
+positional arguments:
+  COMMAND
+    update       update list of available firmwares
+    list         list firmwares
+    flash        flash firmware
+    devices      show devices
+    search       search in firmwares names and descriptions
+    pull         pull firmware to cache
+    clean        clean cache
+    create       create new firmware
+    clone        download firmware to file
+    help         show help
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -v, --version  show program's version number and exit
+```
+
+```bash
+# an error that appears upon update
+# ugly: json.loads(response.read().decode('utf-8'))
+# reading: https://api.github.com/orgs/bigclownlabs/repos?page=1
+# not fail safe mode
+$ bcf update
+Traceback (most recent call last):
+  File "/usr/local/bin/bcf", line 11, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python2.7/site-packages/bcf/cli.py", line 210, in main
+    repos.update()
+  File "/usr/local/lib/python2.7/site-packages/bcf/github_repos.py", line 102, in update
+    gh_repos = self.api_get('https://api.github.com/orgs/bigclownlabs/repos?page=%d' % page)
+  File "/usr/local/lib/python2.7/site-packages/bcf/github_repos.py", line 96, in api_get
+    return json.loads(response.read().decode('utf-8'))
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+```
+
+List serial devices
+
+```bash
+# on macosx
+ls /dev/tty.*
+```
+
+Github API to get list of repositories, next extract firmwares (starting with bcf)
+
+```bash
+curl https://api.github.com/orgs/bigclownlabs/repos?page=1
+```
+
+Cache Directories shall be printable `/Users/moravekp/Library/Caches/bcf` using the utility itself, in order to be able to remove that directory when corrupted or the structure has changed.
+
+```python
+# add this into the cli.py for debugging...
+#
+user_cache_dir = appdirs.user_cache_dir('bcf')
+print(user_cache_dir)
+```
+
+? OTA Over the air firware flasher ?
+
+? What happens when there is more core modules connected ?
+
 **... here comes the cloud (To-Do) ...**
 
 ## Resources
