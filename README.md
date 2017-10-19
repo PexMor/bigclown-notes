@@ -21,3 +21,8 @@ Simple sketch to show principle of tweaking the [Firmware Utility](https://githu
 ## Python DFU
 
 Github [mobilinkd/dfuse-tool](https://github.com/mobilinkd/dfuse-tool.git)
+
+## Search the Big Clown
+
+* [E-Shop](https://cse.google.com/cse/publicurl?cx=007269654217953948939:gte4fncwbwe)
+* [Docs](https://cse.google.com/cse/publicurl?cx=007269654217953948939:e1y2jirpcwy)
