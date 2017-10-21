@@ -1,8 +1,14 @@
 # Projects
 
-[Baby steps](babysteps.md) with the Big Clown's Core Module.
+This folder contains various comments on projects and inspirations from all over the Internet.
 
-> *ToDo: describe MQTT message evolution*
+## Baby steps
+
+[Baby steps](babysteps.md) was my first take on Big Clown hardware. 
+
+## Protocol
+
+During my experiments with Core module I walked through OBSOLETE project repo followed by binary to source (DiY) module back to well prepared [bcf-generic-node]() and [bcf-usb-gateway]().
 
 ```
 # Original messages (now obsolete)
@@ -33,6 +39,12 @@ It looks like this actually, and consists of the climate module, core module and
 
 *The Unicode character \u2103 stands for [degree of Celsius](http://www.fileformat.info/info/unicode/char/2103/index.htm) - two glyph symbol as one character, this was omited in later version of procol as redundant information.*
 
+## Firmware flashing
+
+What is Device Firmware Update [DFU]().
+
+*ToDo: SMT32, Atmel, Nordic; Python(USB lib), C, Java(USB lib), Android/Java(ADK USB Access)*
+
 ## Climate station
 
 What such climate station does and how does it looks like?
@@ -45,3 +57,9 @@ What such climate station does and how does it looks like?
 
 John Shovic's [project Curacao](http://www.switchdoc.com/project-curacao-project-page/) shared trough [SwitchDoc Labs](http://www.switchdoc.com/).
 
+## Irrigation system
+
+The is an obvious path from climate monitoring back to climate "control" (kind off:-).
+
+* [Home Irigation system](https://pihrt.com/elektronika/248-moje-rapsberry-pi-zavlazovani-zahrady) (czech language - with translation option)
+* [Farm Bot](https://farmbot.io/) - for growing your very own gardening robot (U can buy just for USD2,595 Oct'17)
