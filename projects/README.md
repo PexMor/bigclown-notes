@@ -9,7 +9,7 @@
 ["remote/thermometer/i2c0-49", {"temperature": [21.56, "\u2103"]}]
 ["remote/humidity-sensor/i2c0-40", {"relative-humidity": [78.3, "%"]}]
 
-
+# The new version of Clown talk, that contains the module-id
 ["<module-A-id>/push-button/-/event-count", 0]
 ["<module-A-id>/push-button/-/event-count", 1]
 ["<module-A-id>/thermometer/0:1/temperature", 18.81]
